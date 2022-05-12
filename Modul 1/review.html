@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h5 id="sum"></h5>
+    <script>
+
+        function generateArray(size){
+            // Khai bao bao 1 mang voi kich thuoc la size
+            // Duyet qua cac phan tử trong mang roi gán giá trị RANDOM
+            let arr = [size];
+
+            for(let i=0;i<size;i++){
+                arr[i] = Math.floor(Math.random() * 90 + 10);
+            }
+            return arr;
+        }
+
+        function printArray(arr) {
+            return arr.join(',');
+        }
+        function printArrayNew(arr){
+            // Tao bien kieu chuoi de luu gia tri
+            // Duyet qua tat ca cac phan tu
+            //
+            // 
+            // [3, 4, 5, 6]
+            let str = "[" ;
+            for(let i=0;i<arr.length;i++){
+                if(i==arr.length-1){
+                    str = str +  arr[i] + "]";
+                }else{
+                    str = str +  arr[i] + " , ";
+                }
+            }
+            return str;
+        }
+
+        // Tao 1 ham tinh tong
+        // Tham so so la mot mang
+        // Tra ve la 1 tong 
+        function sumArray(arr) {
+
+            let total = 0; 
+            for (let i = 0; i < arr.length; i++) {
+                total += arr[i];
+            }
+            return total;
+        }
+        // hàm tính tổng sumarray nớ 
+        // cho cái tổng bằng 0
+        // cho thêm một vòng lặp for trong đó khai báo giá trị từ điểm bắt đầu trong một mảng ví dụ ta cho giá trị ban đầu là 0; ròi cho nó chạy đến phần tử i cuối cùng của mảng
+        // rồi tăng i thêm một đơn vị
+        // sau đó tổng của cái mảng mik đang cho nó hạy công thêm một cái mảng có phần tử trong đó
+        // sau đó nó sẽ trả về hàm tổng mà mik tính ban đầu
+
+        function totalOdd(arr) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 != 0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function totalEven(arr) {
+            let count = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function print(smg) {
+            document.write(smg + "<br>");
+        }
+
+        function inputSize() {
+            let size = 0;
+            do {
+                size = +prompt('input size: ');
+            } while (!Number.isInteger(size))
+            return size;
+        }
+
+        function main() {
+            let arr = generateArray(10);
+            let str = printArrayNew(arr);
+            console.log(str);
+            // let size = inputSize();
+            // let array = generateArray(size);
+            // print(`Mảng được tạo ra là ${printArray(array)}`);
+            // print(`Tổng các giá trị trong mảng là: ${sumArray(array)}`);
+            // print(`Số lượng các số lẻ trong mảng là: ${totalOdd(array)}`);
+            // print(`Số lượng các số chẵn trong mảng là: ${totalEven(array)}`);
+
+
+            // let s2 = inputSize();
+            // let arr2 = generateArray(s2);
+            // print(`Mảng được tạo ra là ${printArray(arr2)}`);
+            // print(`Tổng các giá trị trong mảng là: ${sumArray(arr2)}`);
+            // print(`Số lượng các số lẻ trong mảng là: ${totalOdd(arr2)}`);
+            // print(`Số lượng các số chẵn trong mảng là: ${totalEven(arr2)}`);
+
+            // let n = 5;
+            // for (let i = 0; i < n; i++) {
+            //     let size = inputSize();
+            //     let array = generateArray(size);
+            //     print(`Mảng được tạo ra là ${printArray(array)}`);
+            //     print(`Tổng các giá trị trong mảng là: ${sumArray(array)}`);
+            //     print(`Số lượng các số lẻ trong mảng là: ${totalOdd(array)}`);
+            //     print(`Số lượng các số chẵn trong mảng là: ${totalEven(array)}`);
+            // }
+        }
+
+        main();
+        totalOdd();
+
+    </script>
+</body>
+
+</html>
