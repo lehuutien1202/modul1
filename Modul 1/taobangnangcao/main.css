@@ -1,0 +1,19 @@
+h2 {
+    color: brown;
+    font-size: 50px;
+}
+table {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+.row tr th {
+    background-color: brown;
+    border: 1px solid black;
+
+}
+
+.row tr td {
+    background-color: aquamarine;
+    border: 1px solid black;
+}
